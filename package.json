@@ -6,6 +6,12 @@
   "repository": "git@github.com:WebD-EG/Discord-Context.git",
   "author": "Elian Gutierrez <eliangu3600103@gmail.com>",
   "license": "MIT",
+  "keywords": [
+    "discord",
+    "node",
+    "discordjs",
+    "context"
+  ],
   "scripts": {
     "test": "ava"
   },
