@@ -15,12 +15,44 @@ module.exports = class DiscordContext {
         this._command = undefined
     }
 
+    /**
+     * @description Gets the Message object
+     * @readonly
+     * @returns {Discord.Message}
+     */
     get message() {
         return this._message
     }
 
+    /**
+     * @description Gets the arguments of the message
+     * @readonly
+     * @returns {Array<String>}
+     */
     get args() {
         if(typeof this._args !== 'undefined') return this._args
+        const { content } = this.message
+        const stack = content.slice(1).split(this._options.separator)
+        return stack.splice(0, stack.length)
+    }
+
+    /**
+     * @description Gets the option object
+     * @readonly
+     * @returns {Object}
+     */
+    get options() {
+        return this._options
+    }
+
+    /**
+     * @description Gets the mentions of the message
+     * @readonly
+     * @returns {Array<Discord.User>}
+     */
+    get mentions() {
+        if(typeof this._mentions !== 'undefined') return this._mentions
+        return this.message.mentions
     }
 
 }
