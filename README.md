@@ -4,11 +4,12 @@
 A package that helps you create your Discord bots
 
 # Example
+
+```js
 import { Client } from 'discord.js'
 import Context from 'discord-context'
 const bot = new Client()
 
-```js
 bot.on('message', (message) => {
     // message = '!ban @username#4454 flood'
     const ctx = new Context(message)
@@ -23,6 +24,10 @@ bot.on('message', (message) => {
 ## Using another separator and prefix
 
 ```js
+import { Client } from 'discord.js'
+import Context from 'discord-context'
+const bot = new Client()
+
 bot.on('message', (message) => {
     // message = '//ban.@username#4454.flood'
     const ctx = new Context(message, {
