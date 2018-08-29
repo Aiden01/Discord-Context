@@ -32,7 +32,7 @@ module.exports = class DiscordContext {
     get args() {
         if(typeof this._args !== 'undefined') return this._args
         const { content } = this.message
-        const stack = content.slice(1).split(this._options.separator)
+        const stack = content.slice(this.options.prefix.length).split(this._options.separator)
         return stack.splice(0, stack.length)
     }
 
@@ -53,6 +53,16 @@ module.exports = class DiscordContext {
     get mentions() {
         if(typeof this._mentions !== 'undefined') return this._mentions
         return this.message.mentions
+    }
+
+    /**
+     * @description Gets the command of the message
+     * @readonly
+     * @returns {String}
+     */
+    get command() {
+        if(typeof this._command !== 'undefined') return this._command
+        return this.args[0]
     }
 
 }
