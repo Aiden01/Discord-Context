@@ -1,0 +1,17 @@
+{
+  "name": "discord-context",
+  "version": "1.0.0",
+  "description": "A package that helps you create your Discord bots",
+  "main": "src/index.js",
+  "repository": "git@github.com:WebD-EG/Discord-Context.git",
+  "author": "Elian Gutierrez <eliangu3600103@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "discord.js": "^11.4.2"
+  },
+  "ava": {
+    "files": ["tests/*.test.js"],
+    "verbose": true
+  }
+}
