@@ -41,3 +41,8 @@ bot.on('message', (message) => {
     console.log(ctx.mentions) // message.mentions
 })
 ```
+
+# Installation
+```bash
+$ npm i --save discord-context
+```
