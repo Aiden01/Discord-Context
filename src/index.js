@@ -65,4 +65,13 @@ module.exports = class DiscordContext {
         return this.args[0]
     }
 
+    /**
+     * @description Sends a message to the channel without ping
+     * @param {Array<String>} partialMessages
+     * @returns {Promise<any>}
+     */
+    sendMessage(...partialMessages) {
+        return this.message.channel.send(partialMessages.join())
+    }
+
 }
